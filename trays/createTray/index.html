@@ -21,32 +21,8 @@
     <title>Clarisa</title>
   </head>
   <body>
-    <div id="navBar">
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"> Clarisa </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="#"> Documents </a>
-              <a class="nav-link" href="#"> Trays </a>
-              <a class="nav-link" href="#"> Settings </a>
-              <a class="nav-link" href="#"> Sign out </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+    <div id="navBar"></div>
+
     <div id="main">
       <div class="container">
         <div class="row">
@@ -65,7 +41,7 @@
             </div>
 
             <div class="mb-5 mt-3">
-              <div class="card mb-3">
+              <div class="card mb-3 border border-success" id="mainCard">
                 <div class="card-header" id="cardHeader">
                   <p class="h5 fw-normal mb-3">
                     First, add a name to your tray.
@@ -74,14 +50,17 @@
                     <div class="col-auto">
                       <input
                         type="text"
-                        class="form-control border border-success"
+                        class="form-control border"
                         id="addNameInput"
                         placeholder="Name"
                         required
                       />
                     </div>
                     <div class="col-auto">
-                      <button type="submit" class="btn btn-success border">
+                      <button
+                        type="submit"
+                        class="btn btn-light border text-success"
+                      >
                         Add name
                       </button>
                     </div>
@@ -119,7 +98,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../index.js" type="text/babel"></script>
-    <script src="../request.js" type="text/babel"></script>
+    <script src="/index.js" type="text/babel"></script>
+    <script src="/request.js" type="text/babel"></script>
   </body>
 </html>

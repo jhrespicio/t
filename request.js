@@ -21,22 +21,22 @@ class Request extends React.Component {
   render() {
     return (
       <div class="card-body">
-        <div className="card">
-          <div className="card-body bg-light">
+        <div className="card border-success">
+          <div className="card-body">
             <h5 class="card-title fw-normal">{this.props.intro}</h5>
             <h5 class="card-title fw-normal text-secondary">
               {this.props.decide}
             </h5>
             <button
               type="button"
-              class="btn btn-light border m-2 bg-white border-success"
+              class="btn btn-light border m-2 text-success"
               onClick={() => reqDoc()}
             >
               Request a document from someone
             </button>
             <button
               type="button"
-              class="btn btn-dark m-2 border border-success"
+              class="btn btn-light border m-2 text-success"
               onClick={() => reqSig()}
             >
               Request someone to sign a document
@@ -51,8 +51,8 @@ class ReqDoc extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <div className="card">
-          <div class="card-body bg-light">
+        <div className="card border border-success">
+          <div class="card-body">
             <div className="mb-2">
               <span class="badge fw-normal rounded-pill bg-white text-dark border">
                 Document request
@@ -65,14 +65,14 @@ class ReqDoc extends React.Component {
               <div class="col-auto">
                 <input
                   type="text"
-                  class="form-control border border-success"
+                  class="form-control border"
                   id="reqDocName"
                   placeholder="Name"
                   required
                 />
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-success border">
+                <button type="submit" class="btn btn-light border text-success">
                   This document
                 </button>
               </div>
@@ -87,7 +87,7 @@ class Signers extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <div className="card">
+        <div className="card border border-success">
           <div class="card-header">
             {this.props.name}{" "}
             <span class="badge fw-normal rounded-pill bg-white text-dark border">
@@ -109,14 +109,14 @@ class Signers extends React.Component {
               <div class="col-auto">
                 <input
                   type="text"
-                  class="form-control border border-success"
+                  class="form-control border"
                   id="signer"
                   placeholder="Account"
                   required
                 />
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-success border">
+                <button type="submit" class="btn btn-light border text-success">
                   This account's signature
                 </button>
               </div>
@@ -196,7 +196,7 @@ function CreateCards(props) {
             <Pill document={request.document} />
           </div>
           <div class="card mb-3 mx-3">
-            <div class="card-body bg-light">
+            <div class="card-body">
               <CardBody request={request} />
             </div>
           </div>
@@ -209,8 +209,8 @@ class ReqSig extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <div className="card">
-          <div class="card-body bg-light">
+        <div className="card border-success">
+          <div class="card-body">
             <div className="mb-2">
               <span class="badge fw-normal rounded-pill bg-dark border">
                 Signature request
@@ -224,14 +224,14 @@ class ReqSig extends React.Component {
               <div class="col-auto">
                 <input
                   type="text"
-                  class="form-control border border-success"
+                  class="form-control border"
                   id="reqSigName"
                   placeholder="Name"
                   required
                 />
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-success border">
+                <button type="submit" class="btn btn-light border text-success">
                   This name
                 </button>
               </div>
@@ -246,7 +246,7 @@ class DocType extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <div className="card">
+        <div className="card border-success">
           <div class="card-header">
             {this.props.name}{" "}
             <span class="badge fw-normal rounded-pill bg-dark border">
@@ -262,14 +262,14 @@ class DocType extends React.Component {
             </h5>
             <button
               type="button"
-              class="btn btn-dark m-2 border border-success"
+              class="btn btn-light m-2 border text-success"
               onClick={() => reqSigFile()}
             >
               A file
             </button>
             <button
               type="button"
-              class="btn btn-dark m-2 border border-success"
+              class="btn btn-light m-2 border text-success"
               onClick={() => reqSigText()}
             >
               Text
@@ -284,7 +284,7 @@ class FileUpload extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <div className="card">
+        <div className="card border-success">
           <div class="card-header">
             {this.props.name}{" "}
             <span class="badge fw-normal rounded-pill bg-dark border">
@@ -294,16 +294,12 @@ class FileUpload extends React.Component {
           <div class="card-body">
             <form class="row g-3" id="uploadFile">
               <div class="col-auto">
-                <input
-                  class="form-control border border-success"
-                  type="file"
-                  id="formFile"
-                />
+                <input class="form-control border" type="file" id="formFile" />
               </div>
               <div class="col-auto">
                 <button
                   type="submit"
-                  class="btn btn-success border"
+                  class="btn btn-light border text-success"
                   id="uploadFileBtn"
                 >
                   Create document
@@ -320,7 +316,7 @@ class ReqText extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <div className="card">
+        <div className="card border-success">
           <div class="card-header">
             {this.props.name}{" "}
             <span class="badge fw-normal rounded-pill bg-dark border">
@@ -332,12 +328,12 @@ class ReqText extends React.Component {
             <form id="text">
               <div>
                 <textarea
-                  class="form-control mb-3 border border-success"
+                  class="form-control mb-3 border"
                   id="textArea"
                   rows="7"
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-success border">
+              <button type="submit" class="btn btn-light border text-success">
                 Create document
               </button>
             </form>
@@ -347,3 +343,47 @@ class ReqText extends React.Component {
     );
   }
 }
+function Nav() {
+  return (
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          {" "}
+          Clarisa{" "}
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">
+              {" "}
+              Documents{" "}
+            </a>
+            <a class="nav-link" href="/trays">
+              {" "}
+              Trays{" "}
+            </a>
+            <a class="nav-link" href="#">
+              {" "}
+              Settings{" "}
+            </a>
+            <a class="nav-link" href="#">
+              {" "}
+              Sign out{" "}
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}
+ReactDOM.render(<Nav />, document.getElementById("navBar"));

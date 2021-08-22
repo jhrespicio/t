@@ -4,6 +4,8 @@ tray.requests = [];
 var tempObj = {};
 console.log(tray, tempObj);
 var file;
+form = document.getElementById("addName");
+form.addEventListener("submit", addName);
 function el(id) {
   return document.getElementById(id);
 }
@@ -31,6 +33,7 @@ async function addName(e) {
   );
   el("startBtns").classList.remove("d-none");
   console.log(tray, tempObj);
+  el("mainCard").classList.remove("border-success");
 }
 async function reqDoc() {
   el("createTray").classList.add("d-none");
@@ -183,5 +186,3 @@ async function text(e) {
     el("bodyCont")
   );
 }
-form = document.getElementById("addName");
-form.addEventListener("submit", addName);

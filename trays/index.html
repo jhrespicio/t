@@ -22,36 +22,30 @@
     <title>Clarisa</title>
   </head>
   <body>
-    <div id="navBar">
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"> Clarisa </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="#"> Documents </a>
-              <a class="nav-link" href="#"> Trays </a>
-              <a class="nav-link" href="#"> Settings </a>
-              <a class="nav-link" href="#"> Sign out </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+    <div id="navBar"></div>
 
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2">
+          <a
+            class="btn btn-light mt-5 h5 fw-normal border"
+            href="createTray"
+            role="button"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-plus-lg mb-1"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
+              />
+            </svg>
+            &nbsp;Create a tray
+          </a>
           <div class="mt-4 h4 fw-normal mb-4">
             <a href="#" class="text-decoration-none">jhrespicio</a>
             /
@@ -118,7 +112,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../request.js" type="text/babel"></script>
-    <script src="../index.js" type="text/babel"></script>
+    <script src="/index.js" type="text/babel"></script>
+    <script src="/request.js" type="text/babel"></script>
   </body>
 </html>
