@@ -1,0 +1,21 @@
+{
+  "name": "String",
+  "public": false,
+  "serve": true,
+  "requests": {
+    "documents": [
+      {
+        "name": "String",
+        "signers": ["String"],
+        "submitters": [{ "account": "String", "document": "String" }]
+      }
+    ],
+    "signatures": [
+      {
+        "name": "String",
+        "document": "String",
+        "signers": [{ "account": "String", "signature": false }]
+      }
+    ]
+  }
+}

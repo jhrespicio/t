@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- React JS -->
+
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <title>Clarisa</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Clarisa</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">Documents</a>
+            <a class="nav-link" href="#">Trays</a>
+            <a class="nav-link" href="#">Settings</a>
+            <a class="nav-link" href="#">Sign out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="mt-4 h4 fw-normal mb-4">
+            <a href="#" class="text-decoration-none">jhrespicio</a>
+            /
+            <a href="#" class="text-decoration-none fw-bold">Trays</a>
+          </div>
+
+          <form class="row g-3 mb-3" id="signers">
+            <div class="col-auto">
+              <input
+                type="text"
+                class="form-control border"
+                id="signer"
+                placeholder="Tray"
+                required
+              />
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-light border">Search</button>
+            </div>
+          </form>
+
+          <div class="p-5"></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./request.js" type="text/babel"></script>
+    <script src="./index.js" type="text/babel"></script>
+  </body>
+</html>
