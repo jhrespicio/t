@@ -4,14 +4,14 @@ tray.requests = [];
 var tempObj = {};
 console.log(tray, tempObj);
 var file;
+function el(id) {
+  return document.getElementById(id);
+}
 function value(id) {
   return document.getElementById(id).value;
 }
 function innerHtml(id, html) {
   document.getElementById(id).innerHTML = html;
-}
-function el(id) {
-  return document.getElementById(id);
 }
 function append(html, cont) {
   var div = document.createElement("div");
@@ -183,9 +183,5 @@ async function text(e) {
     el("bodyCont")
   );
 }
-window.onload = async function () {
-  await ReactDOM.render(<NavBar />, el("navBar"));
-  await ReactDOM.render(<Main />, el("main"));
-  form = document.getElementById("addName");
-  form.addEventListener("submit", addName);
-};
+form = document.getElementById("addName");
+form.addEventListener("submit", addName);

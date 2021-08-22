@@ -22,30 +22,32 @@
     <title>Clarisa</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Clarisa</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="#">Documents</a>
-            <a class="nav-link" href="#">Trays</a>
-            <a class="nav-link" href="#">Settings</a>
-            <a class="nav-link" href="#">Sign out</a>
+    <div id="navBar">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> Clarisa </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#"> Documents </a>
+              <a class="nav-link" href="#"> Trays </a>
+              <a class="nav-link" href="#"> Settings </a>
+              <a class="nav-link" href="#"> Sign out </a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -62,7 +64,7 @@
                 type="text"
                 class="form-control border"
                 id="signer"
-                placeholder="Tray"
+                placeholder="Tray name"
                 required
               />
             </div>
@@ -70,6 +72,40 @@
               <button type="submit" class="btn btn-light border">Search</button>
             </div>
           </form>
+
+          <div class="mt-4">
+            <div>
+              <div>
+                <span
+                  ><a href="#" class="text-decoration-none">
+                    request name
+                  </a></span
+                >
+                <span class="badge fw-normal rounded-pill bg-success border">
+                  Serving
+                </span>
+              </div>
+              <div class="small text-secondary mb-2">Created 4 days ago</div>
+              <div class="card mb-4">
+                <div class="card-body">
+                  <a href="#" class="text-decoration-none small"> file.txt </a>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-link text-decoration-none btn-sm text-uppercase text-muted"
+              >
+                Newer</button
+              >&nbsp;&nbsp;&nbsp;&nbsp;<button
+                type="button"
+                class="btn btn-link text-decoration-none btn-sm text-uppercase text-dark"
+              >
+                Older
+              </button>
+            </div>
+          </div>
 
           <div class="p-5"></div>
         </div>
@@ -82,7 +118,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="./request.js" type="text/babel"></script>
-    <script src="./index.js" type="text/babel"></script>
+    <script src="../request.js" type="text/babel"></script>
+    <script src="../index.js" type="text/babel"></script>
   </body>
 </html>
