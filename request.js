@@ -8,7 +8,7 @@ class CardHeader extends React.Component {
           <button
             type="button"
             class="btn btn-white text-decoration-none btn-sm border"
-            onClick="location.reload()"
+            onClick={() => location.reload()}
           >
             Erase
           </button>
@@ -39,7 +39,7 @@ class Request extends React.Component {
               class="btn btn-light border m-2 text-success"
               onClick={() => reqSig()}
             >
-              Request someone to sign a document
+              Request someone to sign/accept a document
             </button>
           </div>
         </div>
@@ -73,7 +73,7 @@ class ReqDoc extends React.Component {
               </div>
               <div class="col-auto">
                 <button type="submit" class="btn btn-light border text-success">
-                  This document
+                  This
                 </button>
               </div>
             </form>
@@ -117,7 +117,7 @@ class Signers extends React.Component {
               </div>
               <div class="col-auto">
                 <button type="submit" class="btn btn-light border text-success">
-                  This account's signature
+                  Request document
                 </button>
               </div>
             </form>
@@ -232,7 +232,7 @@ class ReqSig extends React.Component {
               </div>
               <div class="col-auto">
                 <button type="submit" class="btn btn-light border text-success">
-                  This name
+                  This
                 </button>
               </div>
             </form>
@@ -331,6 +331,7 @@ class ReqText extends React.Component {
                   class="form-control mb-3 border"
                   id="textArea"
                   rows="7"
+                  placeholder="The text here..."
                 ></textarea>
               </div>
               <button type="submit" class="btn btn-light border text-success">
@@ -343,47 +344,3 @@ class ReqText extends React.Component {
     );
   }
 }
-function Nav() {
-  return (
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          {" "}
-          Clarisa{" "}
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="#">
-              {" "}
-              Documents{" "}
-            </a>
-            <a class="nav-link" href="/trays">
-              {" "}
-              Trays{" "}
-            </a>
-            <a class="nav-link" href="#">
-              {" "}
-              Settings{" "}
-            </a>
-            <a class="nav-link" href="#">
-              {" "}
-              Sign out{" "}
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-}
-ReactDOM.render(<Nav />, document.getElementById("navBar"));

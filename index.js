@@ -47,7 +47,7 @@ async function reqDocName(e) {
   await ReactDOM.render(
     <Signers
       name={tempObj.name}
-      intro="Whose signature are you looking for?"
+      intro="Signed by..."
       onClick={() => alert()}
     />,
     el("bodyCont")
@@ -86,8 +86,8 @@ async function addDocReq() {
   }
   await ReactDOM.render(
     <Request
-      intro="Congrats on making your request! 🎉"
-      decide="You can now finish or add another request."
+      intro="Congrats, you made a request! 🎉"
+      decide="You can now finish or make another request."
     />,
     el("bodyCont")
   );
@@ -144,7 +144,7 @@ async function addSigFile() {
   }
   await ReactDOM.render(
     <Request
-      intro="Congrats on your request! 🎉"
+      intro="Congrats, you made a request! 🎉"
       decide="You can now finish or make another request."
     />,
     el("bodyCont")
@@ -180,7 +180,7 @@ async function text(e) {
   }
   await ReactDOM.render(
     <Request
-      intro="Congrats on your request! 🎉"
+      intro="Congrats, you made a request! 🎉"
       decide="You can now finish or make another request."
     />,
     el("bodyCont")
