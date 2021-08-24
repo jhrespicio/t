@@ -31,14 +31,20 @@ function Nav() {
               {" "}
               Settings{" "}
             </a>
-            <a class="nav-link" href="#">
+            <button
+              class="nav-link border-0 bg-transparent"
+              onClick={() => signOut()}
+            >
               {" "}
               Sign out{" "}
-            </a>
+            </button>
           </div>
         </div>
       </div>
     </nav>
   );
 }
-ReactDOM.render(<Nav />, document.getElementById("navBar"));
+async function renderNav() {
+  ReactDOM.render(<Nav />, document.getElementById("navBar"));
+}
+renderNav();

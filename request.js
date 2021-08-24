@@ -156,7 +156,7 @@ function CardBody(props) {
   if (request.document === undefined) {
     return (
       <div>
-        <div class="card-text small text-secondary">{request.signer}</div>
+        <span class="badge bg-light text-dark fw-normal">{request.signer}</span>
       </div>
     );
   }

@@ -1,11 +1,18 @@
 var form;
 var tray = {};
 tray.requests = [];
+tray.id = Date.now();
 var tempObj = {};
-console.log(tray, tempObj);
 var file;
-form = document.getElementById("addName");
-form.addEventListener("submit", addName);
+var trays = lGet("traysClar");
+console.log("Trays", trays);
+function loadCreate() {
+  if (location.href.includes("/trays/createTray")) {
+    form = document.getElementById("addName");
+    form.addEventListener("submit", addName);
+  }
+}
+loadCreate();
 function el(id) {
   return document.getElementById(id);
 }
@@ -20,6 +27,16 @@ function append(html, cont) {
   div.innerHTML = html;
   el(cont).appendChild(div);
 }
+function lGet(s) {
+  var o = JSON.parse(localStorage.getItem(s));
+  if (o === null) {
+    o = [];
+  }
+  return o;
+}
+function lSet(s, o) {
+  localStorage.setItem(s, JSON.stringify(o));
+}
 async function addName(e) {
   e.preventDefault();
   tray.name = value("addNameInput");
@@ -32,7 +49,6 @@ async function addName(e) {
     el("bodyCont")
   );
   el("startBtns").classList.remove("d-none");
-  console.log(tray, tempObj);
   el("mainCard").classList.remove("border-success");
 }
 async function reqDoc() {
@@ -54,13 +70,11 @@ async function reqDocName(e) {
   );
   form = document.getElementById("signers");
   form.addEventListener("submit", signers);
-  console.log(tray, tempObj);
 }
 async function signers(e) {
   e.preventDefault();
   var signer = value("signer");
   tempObj.signer = signer;
-  console.log(tray, tempObj);
   addDocReq();
 }
 async function addDocReq() {
@@ -79,7 +93,6 @@ async function addDocReq() {
   if (!added) {
     tray.requests.push(req);
   }
-  console.log(tray, tempObj);
   await ReactDOM.render(<CreateCards requests={tray.requests} />, el("cards"));
   if (tray.requests.length !== 0) {
     el("createTray").classList.remove("d-none");
@@ -101,7 +114,6 @@ async function reqSig() {
 async function reqSigName(e) {
   e.preventDefault();
   tempObj.name = value("reqSigName");
-  console.log(tray, tempObj);
   ReactDOM.render(<DocType name={tempObj.name} />, el("bodyCont"));
 }
 async function reqSigFile() {
@@ -115,8 +127,6 @@ async function uploadFile(e) {
   if (file === undefined) {
     return;
   }
-  console.log(file);
-  console.log(tray, tempObj);
   addSigFile();
 }
 async function addSigFile() {
@@ -137,7 +147,6 @@ async function addSigFile() {
   if (!added) {
     tray.requests.push(req);
   }
-  console.log(tray, tempObj);
   await ReactDOM.render(<CreateCards requests={tray.requests} />, el("cards"));
   if (tray.requests.length !== 0) {
     el("createTray").classList.remove("d-none");
@@ -173,7 +182,6 @@ async function text(e) {
   if (!added) {
     tray.requests.push(req);
   }
-  console.log(tray, tempObj);
   await ReactDOM.render(<CreateCards requests={tray.requests} />, el("cards"));
   if (tray.requests.length !== 0) {
     el("createTray").classList.remove("d-none");
@@ -185,4 +193,14 @@ async function text(e) {
     />,
     el("bodyCont")
   );
+}
+async function createTray() {
+  trays.push(tray);
+  lSet("traysClar", trays);
+  console.log("Trays", trays);
+  location.href = "/trays";
+}
+async function signOut() {
+  localStorage.removeItem("traysClar");
+  location.href = "/";
 }
